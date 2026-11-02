@@ -1,0 +1,47 @@
+{
+  "data_posicao": "2026-11-02",
+  "fundos": [
+    {
+      "nome": "Fundo DI Conservador",
+      "classe": "renda_fixa",
+      "tributacao": "longo_prazo",
+      "data_aplicacao": "2025-03-10",
+      "valor_aplicado": 6000.00,
+      "saldo_bruto_atual": 6420.00,
+      "taxa_administracao_aa": 1.50,
+      "taxa_performance": null,
+      "cotizacao_resgate": "D+0",
+      "liquidacao_resgate": "D+0",
+      "tem_come_cotas": true,
+      "uso_pretendido": "reserva_emergencia"
+    },
+    {
+      "nome": "Fundo Multimercado Macro",
+      "classe": "multimercado",
+      "tributacao": "longo_prazo",
+      "data_aplicacao": "2026-05-11",
+      "valor_aplicado": 4000.00,
+      "saldo_bruto_atual": 4190.00,
+      "taxa_administracao_aa": 2.00,
+      "taxa_performance": "20% sobre o que exceder 100% do CDI",
+      "cotizacao_resgate": "D+30",
+      "liquidacao_resgate": "D+1",
+      "tem_come_cotas": true,
+      "uso_pretendido": "reserva_emergencia"
+    },
+    {
+      "nome": "Fundo de Ações Brasil",
+      "classe": "acoes",
+      "tributacao": "acoes",
+      "data_aplicacao": "2026-08-20",
+      "valor_aplicado": 2000.00,
+      "saldo_bruto_atual": 1910.00,
+      "taxa_administracao_aa": 2.00,
+      "taxa_performance": null,
+      "cotizacao_resgate": "D+1",
+      "liquidacao_resgate": "D+2",
+      "tem_come_cotas": false,
+      "uso_pretendido": "longo_prazo"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "conceito": "Taxa de administração",
+    "definicao": "Percentual anual cobrado pelo fundo sobre o patrimônio aplicado para remunerar a gestão e a administração. É descontada diariamente do valor da cota.",
+    "ponto_de_atencao": "A rentabilidade divulgada pelo fundo já vem descontada dessa taxa. Em fundos de renda fixa DI, que rendem perto do CDI, uma taxa alta consome boa parte do rendimento.",
+    "exemplo": "Em R$ 10.000 aplicados, uma taxa de 1,5% ao ano custa cerca de R$ 150 por ano.",
+    "onde_encontrar": "Lâmina e regulamento do fundo"
+  },
+  {
+    "conceito": "Taxa de performance",
+    "definicao": "Cobrança extra sobre a parte da rentabilidade que supera um índice de referência (benchmark), como o CDI.",
+    "ponto_de_atencao": "Só é cobrada quando o fundo supera o benchmark, mas se soma à taxa de administração.",
+    "exemplo": "Com performance de 20% sobre o que exceder o CDI: se o fundo rendeu 2 pontos acima do CDI, 0,4 ponto fica com o gestor.",
+    "onde_encontrar": "Lâmina e regulamento do fundo"
+  },
+  {
+    "conceito": "Come-cotas",
+    "definicao": "Antecipação semestral do Imposto de Renda em fundos abertos, cobrada no último dia útil de maio e de novembro. O imposto é pago reduzindo a quantidade de cotas do investidor.",
+    "ponto_de_atencao": "A alíquota é de 15% em fundos de longo prazo e de 20% em fundos de curto prazo. Fundos de ações não têm come-cotas. No resgate, cobra-se apenas a diferença entre a alíquota final e o que já foi antecipado.",
+    "exemplo": "Se o fundo teve R$ 200 de rendimento no semestre e é de longo prazo, cerca de R$ 30 são antecipados ao governo em forma de cotas.",
+    "onde_encontrar": "Extrato do fundo (redução da quantidade de cotas em maio e novembro)"
+  },
+  {
+    "conceito": "IR regressivo",
+    "definicao": "Tabela de Imposto de Renda em que a alíquota diminui conforme o tempo que o dinheiro fica aplicado. Vale para fundos de renda fixa e multimercado de longo prazo.",
+    "ponto_de_atencao": "Faixas: até 180 dias, 22,5%; de 181 a 360 dias, 20%; de 361 a 720 dias, 17,5%; acima de 720 dias, 15%. O imposto incide apenas sobre o rendimento, não sobre o valor aplicado.",
+    "exemplo": "Um resgate com R$ 100 de rendimento aos 170 dias paga R$ 22,50 de IR; aos 200 dias, R$ 20,00.",
+    "onde_encontrar": "Receita Federal e informe de rendimentos do fundo"
+  },
+  {
+    "conceito": "Tributação de fundos de ações",
+    "definicao": "Fundos de ações pagam 15% de IR sobre o rendimento apenas no resgate, sem come-cotas e sem tabela regressiva.",
+    "ponto_de_atencao": "São fundos de maior risco: o saldo pode ficar abaixo do valor aplicado.",
+    "exemplo": "Um resgate com R$ 300 de rendimento paga R$ 45 de IR.",
+    "onde_encontrar": "Lâmina do fundo"
+  },
+  {
+    "conceito": "IOF",
+    "definicao": "Imposto cobrado sobre o rendimento em resgates feitos antes de 30 dias da aplicação, com alíquota que diminui dia a dia até zerar no 30º dia.",
+    "ponto_de_atencao": "Não se aplica a fundos de ações.",
+    "exemplo": "Resgatar no primeiro dia pode consumir quase todo o rendimento por causa do IOF.",
+    "onde_encontrar": "Regulamento do fundo"
+  },
+  {
+    "conceito": "Prazo de resgate (cotização e liquidação)",
+    "definicao": "Cotização é o dia em que o pedido de resgate é convertido em dinheiro pelo valor da cota; liquidação é o dia em que o dinheiro cai na conta. São escritos como D+X, em que D é o dia do pedido.",
+    "ponto_de_atencao": "Um fundo com cotização D+30 e liquidação D+1 leva cerca de 31 dias para devolver o dinheiro, o que não combina com uma reserva de emergência.",
+    "exemplo": "Pedido de resgate em 2 de novembro num fundo D+30 / D+1: o dinheiro chega por volta de 3 de dezembro (dias úteis podem alterar a data).",
+    "onde_encontrar": "Lâmina do fundo, campo de prazos de resgate"
+  },
+  {
+    "conceito": "Lâmina do fundo",
+    "definicao": "Documento resumido e padronizado que todo fundo aberto precisa divulgar, com objetivo, taxas, riscos, prazos de resgate e rentabilidade histórica.",
+    "ponto_de_atencao": "É o primeiro documento a consultar antes de aplicar em um fundo.",
+    "exemplo": "A lâmina mostra a taxa de administração e o prazo de resgate logo nas primeiras seções.",
+    "onde_encontrar": "Site da gestora, da corretora ou da CVM"
+  }
+]
