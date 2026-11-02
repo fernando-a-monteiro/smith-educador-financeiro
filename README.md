@@ -1,149 +1,107 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🎓 Smith: Educador Financeiro de Fundos de Investimento
 
-## Contexto
+> Agente de IA Generativa que ensina o investidor a entender a própria carteira de fundos: taxas, come-cotas, IR e prazos de resgate, explicados com os números dele.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Projeto desenvolvido no Lab **"Construa Seu Assistente Virtual Com Inteligência Artificial"** da [DIO](https://www.dio.me/), na trilha Bradesco de Dados, Cibersegurança e GenAI.
 
 ---
 
-## O Que Você Deve Entregar
+## 💡 O Problema
 
-### 1. Documentação do Agente
+Muitos investidores aplicam em fundos sem entender os custos e as regras que afetam seu dinheiro. Taxa de administração, taxa de performance, come-cotas, IR regressivo e prazo de resgate (D+X) estão nas lâminas dos fundos, mas em linguagem técnica. O investidor só percebe o impacto quando ele já aconteceu: rendimento abaixo do esperado, resgate que demora semanas ou imposto que ele não previa.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## 🤖 A Solução
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+O **Smith**, nome em referência a Adam Smith, considerado o pai da economia moderna, é um educador financeiro especializado em fundos. Em vez de esperar perguntas, ele **analisa a carteira do usuário e aponta proativamente** o que merece atenção:
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+| Situação na carteira | O que o Smith faz |
+|----------------------|-------------------|
+| Fundo DI com taxa de administração de 1,5% | Explica quanto a taxa custa em reais e por que o fundo rende menos que o CDI |
+| Fundo com resgate D+30 usado como reserva de emergência | Explica cotização e liquidação, e por que o prazo não combina com o objetivo |
+| Come-cotas no fim do mês | Explica por que a quantidade de cotas vai diminuir |
+| Fundo de ações abaixo do valor aplicado | Explica risco e tributação de fundos de ações |
 
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+O Smith **educa, não aconselha**: ele não recomenda comprar, vender ou trocar fundos. Seu papel é fazer o usuário entender o que tem para decidir por conta própria.
 
 ---
 
-### 3. Prompts do Agente
+## 🏗️ Arquitetura
 
-Documente os prompts que definem o comportamento do seu agente:
+```mermaid
+flowchart TD
+    A[Usuário] -->|Mensagem| B["Streamlit (Interface)"]
+    B --> C[LLM]
+    C --> D["Base de Conhecimento (carteira + conceitos de fundos)"]
+    D --> C
+    C --> E[Validação]
+    E --> F[Resposta]
+```
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+| Componente | Tecnologia |
+|------------|------------|
+| Interface | Streamlit |
+| LLM | Ollama (modelo local) |
+| Base de Conhecimento | JSON e CSV com dados fictícios |
+| Dados e cálculos | Python + Pandas |
 
 ---
 
-### 5. Avaliação e Métricas
+## 📂 Base de Conhecimento
 
-Descreva como você avalia a qualidade do seu agente:
+Todos os dados são **fictícios** e ficam na pasta [`data/`](./data/):
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+| Arquivo | Conteúdo |
+|---------|----------|
+| [`perfil_investidor.json`](./data/perfil_investidor.json) | Perfil, objetivo e metas do cliente fictício |
+| [`carteira_fundos.json`](./data/carteira_fundos.json) | Fundos do cliente: taxas, prazos de resgate, datas e valores |
+| [`conceitos_fundos.json`](./data/conceitos_fundos.json) | Explicações dos conceitos de fundos usadas pelo Smith |
+| [`historico_atendimento.csv`](./data/historico_atendimento.csv) | Dúvidas anteriores do cliente sobre fundos |
 
 ---
 
-## Ferramentas Sugeridas
+## 🛡️ Segurança e Anti-Alucinação
 
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+- Responde apenas com base nos dados fornecidos
+- Cálculos (dias de aplicação, faixa de IR, custo das taxas) são feitos em Python, não pelo LLM
+- Admite quando não sabe e indica onde encontrar a informação
+- Não faz recomendação de investimento e não usa dados reais
 
 ---
 
-## Estrutura do Repositório
+## 📋 Etapas do Projeto
+
+| Etapa | Documento | Status |
+|-------|-----------|--------|
+| 1. Documentação do Agente | [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md) | ✅ Concluída |
+| 2. Base de Conhecimento | [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md) | ✅ Concluída |
+| 3. Prompts do Agente | [`docs/03-prompts.md`](./docs/03-prompts.md) | ✅ Concluída |
+| 4. Aplicação Funcional | [`src/`](./src/) | ✅ Concluída |
+| 5. Avaliação e Métricas | [`docs/04-metricas.md`](./docs/04-metricas.md) | ✅ Concluída |
+| 6. Pitch | [`docs/05-pitch.md`](./docs/05-pitch.md) | ✅ Concluída |
+
+---
+
+## 🗂️ Estrutura do Repositório
 
 ```
-📁 lab-agente-financeiro/
-│
+📁 dio-lab-bia-do-futuro/
 ├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── 📁 data/        # Base de conhecimento (dados fictícios)
+├── 📁 docs/        # Documentação de cada etapa
+├── 📁 src/         # Código da aplicação
+├── 📁 assets/      # Imagens e diagramas
+└── 📁 examples/    # Referências do desafio
 ```
 
 ---
 
-## Dicas Finais
+## ⚠️ Aviso
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Este é um projeto educacional. O Smith não oferece recomendação de investimento e não substitui um profissional certificado. Todos os dados são fictícios.
+
+---
+
+## 👤 Autor
+
+**Fernando Monteiro**
+[GitHub](https://github.com/fernando-a-monteiro)
