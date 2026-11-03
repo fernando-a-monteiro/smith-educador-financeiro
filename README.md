@@ -29,12 +29,14 @@ O Smith **educa, não aconselha**: ele não recomenda comprar, vender ou trocar 
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Mensagem| B["Streamlit (Interface)"]
-    B --> C[LLM]
-    C --> D["Base de Conhecimento (carteira + conceitos de fundos)"]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    A[Usuário] -->|Pergunta| B["Interface (Streamlit)"]
+    D[("Base de conhecimento<br/>JSON e CSV em data/")] --> C["Python (agente.py)<br/>cálculos e montagem do contexto"]
+    P["System prompt<br/>docs/03-prompts.md"] --> C
+    B --> C
+    C -->|"Regras + contexto + conversa"| G["Gemini API"]
+    G -->|Resposta| E["Interface exibe a resposta"]
+    E --> V{"Validação<br/>os valores em R$ existem no contexto?"}
+    V -->|Não| W["Alerta na tela"]
 ```
 
 | Componente | Tecnologia |
