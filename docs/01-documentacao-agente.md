@@ -56,7 +56,7 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Chatbot em [Streamlit](https://streamlit.io/) |
-| LLM | Ollama (modelo local) |
+| LLM | Gemini 3.5 Flash Lite via API (Google AI Studio, plano gratuito) |
 | Base de Conhecimento | Arquivos JSON/CSV mockados na pasta `data/`: carteira fictícia do usuário (fundos, taxas, prazo de resgate, data de aplicação) e explicações dos conceitos de fundos |
 | Validação | Regras no prompt e checagem de que os números citados na resposta existem na base de conhecimento |
 

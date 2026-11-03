@@ -1,107 +1,46 @@
-# 🎓 Smith: Educador Financeiro de Fundos de Investimento
+# Aplicação do Smith
 
-> Agente de IA Generativa que ensina o investidor a entender a própria carteira de fundos: taxas, come-cotas, IR e prazos de resgate, explicados com os números dele.
+Chatbot em Streamlit que conversa com o Gemini usando a carteira fictícia da pasta `data/`.
 
-Projeto desenvolvido no Lab **"Construa Seu Assistente Virtual Com Inteligência Artificial"** da [DIO](https://www.dio.me/), na trilha Bradesco de Dados, Cibersegurança e GenAI.
+## Arquivos
 
----
+| Arquivo | Função |
+|---------|--------|
+| `app.py` | Interface do chat em Streamlit, abertura proativa e alerta de valores não encontrados |
+| `agente.py` | Carrega os dados, faz os cálculos (dias de aplicação, faixa de IR, custo das taxas, come-cotas), monta o contexto, chama o Gemini e valida a resposta |
+| `config.py` | Lê a chave e o modelo do arquivo `.env` e define os caminhos do projeto |
 
-## 💡 O Problema
+O system prompt é lido diretamente de [`docs/03-prompts.md`](../docs/03-prompts.md), então documentação e código usam sempre o mesmo texto.
 
-Muitos investidores aplicam em fundos sem entender os custos e as regras que afetam seu dinheiro. Taxa de administração, taxa de performance, come-cotas, IR regressivo e prazo de resgate (D+X) estão nas lâminas dos fundos, mas em linguagem técnica. O investidor só percebe o impacto quando ele já aconteceu: rendimento abaixo do esperado, resgate que demora semanas ou imposto que ele não previa.
+## Como Rodar
 
-## 🤖 A Solução
+**1. Instale as dependências** (na raiz do projeto):
 
-O **Smith**, nome em referência a Adam Smith, considerado o pai da economia moderna, é um educador financeiro especializado em fundos. Em vez de esperar perguntas, ele **analisa a carteira do usuário e aponta proativamente** o que merece atenção:
-
-| Situação na carteira | O que o Smith faz |
-|----------------------|-------------------|
-| Fundo DI com taxa de administração de 1,5% | Explica quanto a taxa custa em reais e por que o fundo rende menos que o CDI |
-| Fundo com resgate D+30 usado como reserva de emergência | Explica cotização e liquidação, e por que o prazo não combina com o objetivo |
-| Come-cotas no fim do mês | Explica por que a quantidade de cotas vai diminuir |
-| Fundo de ações abaixo do valor aplicado | Explica risco e tributação de fundos de ações |
-
-O Smith **educa, não aconselha**: ele não recomenda comprar, vender ou trocar fundos. Seu papel é fazer o usuário entender o que tem para decidir por conta própria.
-
----
-
-## 🏗️ Arquitetura
-
-```mermaid
-flowchart TD
-    A[Usuário] -->|Mensagem| B["Streamlit (Interface)"]
-    B --> C[LLM]
-    C --> D["Base de Conhecimento (carteira + conceitos de fundos)"]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+```bash
+pip install -r requirements.txt
 ```
 
-| Componente | Tecnologia |
-|------------|------------|
-| Interface | Streamlit |
-| LLM | Ollama (modelo local) |
-| Base de Conhecimento | JSON e CSV com dados fictícios |
-| Dados e cálculos | Python + Pandas |
+**2. Crie uma chave de API gratuita** em [Google AI Studio](https://aistudio.google.com/) (sem ativar faturamento).
 
----
+**3. Crie o arquivo `.env` na raiz do projeto:**
 
-## 📂 Base de Conhecimento
-
-Todos os dados são **fictícios** e ficam na pasta [`data/`](./data/):
-
-| Arquivo | Conteúdo |
-|---------|----------|
-| [`perfil_investidor.json`](./data/perfil_investidor.json) | Perfil, objetivo e metas do cliente fictício |
-| [`carteira_fundos.json`](./data/carteira_fundos.json) | Fundos do cliente: taxas, prazos de resgate, datas e valores |
-| [`conceitos_fundos.json`](./data/conceitos_fundos.json) | Explicações dos conceitos de fundos usadas pelo Smith |
-| [`historico_atendimento.csv`](./data/historico_atendimento.csv) | Dúvidas anteriores do cliente sobre fundos |
-
----
-
-## 🛡️ Segurança e Anti-Alucinação
-
-- Responde apenas com base nos dados fornecidos
-- Cálculos (dias de aplicação, faixa de IR, custo das taxas) são feitos em Python, não pelo LLM
-- Admite quando não sabe e indica onde encontrar a informação
-- Não faz recomendação de investimento e não usa dados reais
-
----
-
-## 📋 Etapas do Projeto
-
-| Etapa | Documento | Status |
-|-------|-----------|--------|
-| 1. Documentação do Agente | [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md) | ✅ Concluída |
-| 2. Base de Conhecimento | [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md) | ✅ Concluída |
-| 3. Prompts do Agente | [`docs/03-prompts.md`](./docs/03-prompts.md) | ✅ Concluída |
-| 4. Aplicação Funcional | [`src/`](./src/) | ✅ Concluída |
-| 5. Avaliação e Métricas | [`docs/04-metricas.md`](./docs/04-metricas.md) | ✅ Concluída |
-| 6. Pitch | [`docs/05-pitch.md`](./docs/05-pitch.md) | ✅ Concluída |
-
----
-
-## 🗂️ Estrutura do Repositório
-
-```
-📁 dio-lab-bia-do-futuro/
-├── 📄 README.md
-├── 📁 data/        # Base de conhecimento (dados fictícios)
-├── 📁 docs/        # Documentação de cada etapa
-├── 📁 src/         # Código da aplicação
-├── 📁 assets/      # Imagens e diagramas
-└── 📁 examples/    # Referências do desafio
+```env
+GEMINI_API_KEY=sua_chave_aqui
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
----
+O `.env` está no `.gitignore` e nunca deve ser enviado ao GitHub.
 
-## ⚠️ Aviso
+**4. Rode a aplicação** (na raiz do projeto):
 
-Este é um projeto educacional. O Smith não oferece recomendação de investimento e não substitui um profissional certificado. Todos os dados são fictícios.
+```bash
+python -m streamlit run src/app.py
+```
 
----
+O chat abre no navegador em `http://localhost:8501`.
 
-## 👤 Autor
+## Observações
 
-**Fernando Monteiro**
-[GitHub](https://github.com/fernando-a-monteiro)
+- **Modelo:** foi usado o `gemini-3.5-flash-lite` por ter limite gratuito maior (500 requisições por dia) que o `gemini-3.8-flash` (20 por dia). Para trocar, basta alterar `GEMINI_MODEL` no `.env`.
+- **Erros da API:** se o Gemini estiver sobrecarregado (erro 503) ou o limite gratuito for atingido (erro 429), o app mostra um aviso e pede para tentar de novo.
+- **Privacidade:** no plano gratuito, o Google pode usar as mensagens para melhorar seus modelos. Por isso o projeto usa apenas dados fictícios. Não digite dados reais no chat.

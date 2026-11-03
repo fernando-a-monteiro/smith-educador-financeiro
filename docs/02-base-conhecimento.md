@@ -17,7 +17,8 @@ Os dados originais do repositório foram adaptados para o tema de fundos de inve
 
 - **`perfil_investidor.json`**: mantido o cliente fictício João Silva (perfil moderado, não aceita risco, objetivo de reserva de emergência). As datas das metas foram atualizadas e foi adicionado o campo `conhecimento_fundos`, para o Smith ajustar o nível da explicação.
 - **`produtos_financeiros.json` → `carteira_fundos.json`**: o catálogo de produtos foi substituído pelos fundos que o cliente já possui. O catálogo trazia o campo `indicado_para`, uma recomendação, o que contradiz a limitação do Smith de não recomendar investimentos.
-- **`conceitos_fundos.json`** (novo): definições de taxa de administração, taxa de performance, come-cotas, IR regressivo, tributação de fundos de ações, IOF, prazo de resgate e lâmina.
+- **`conceitos_fundos.json`** (novo): 14 conceitos de fundos: taxa de administração, taxa de performance, come-cotas, IR regressivo, tributação de fundos de ações, IOF, prazo de resgate, lâmina, CDI, benchmark, cota e valor da cota, classes de fundos, risco e volatilidade e FGC (incluindo o fato de que fundos não têm garantia do FGC).
+
 - **`historico_atendimento.csv`**: os atendimentos genéricos foram trocados por interações sobre fundos.
 - **`transacoes.csv`**: removido, pois controle de gastos está fora do escopo do Smith.
 

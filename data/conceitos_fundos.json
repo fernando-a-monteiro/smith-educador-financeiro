@@ -54,5 +54,47 @@
     "ponto_de_atencao": "É o primeiro documento a consultar antes de aplicar em um fundo.",
     "exemplo": "A lâmina mostra a taxa de administração e o prazo de resgate logo nas primeiras seções.",
     "onde_encontrar": "Site da gestora, da corretora ou da CVM"
+  },
+  {
+    "conceito": "CDI",
+    "definicao": "Taxa média dos empréstimos de um dia entre bancos. Anda muito próxima da taxa Selic e é a principal referência de rentabilidade da renda fixa no Brasil.",
+    "ponto_de_atencao": "Quando um fundo diz que rende '100% do CDI', a comparação é feita antes do Imposto de Renda.",
+    "exemplo": "Se o CDI rendeu 10% no ano, um fundo que rendeu 9,5% entregou 95% do CDI.",
+    "onde_encontrar": "Sites do Banco Central, da B3 e lâmina do fundo"
+  },
+  {
+    "conceito": "Benchmark",
+    "definicao": "Índice de referência usado para comparar a rentabilidade de um fundo, como o CDI para fundos de renda fixa ou o Ibovespa para fundos de ações.",
+    "ponto_de_atencao": "Um fundo pode ter rendimento positivo e, mesmo assim, ficar abaixo do seu benchmark. É o benchmark que diz se o desempenho foi bom para aquele tipo de fundo.",
+    "exemplo": "Um fundo de ações que subiu 5% enquanto o Ibovespa subiu 8% ficou abaixo do benchmark.",
+    "onde_encontrar": "Lâmina e regulamento do fundo"
+  },
+  {
+    "conceito": "Cota e valor da cota",
+    "definicao": "A cota é a fração do patrimônio do fundo que pertence a cada investidor. O valor da cota é o patrimônio do fundo dividido pelo número de cotas e é recalculado todos os dias.",
+    "ponto_de_atencao": "A rentabilidade do investidor é a variação do valor da cota. Já o come-cotas não muda o valor da cota: ele reduz a quantidade de cotas.",
+    "exemplo": "Com 1.000 cotas a R$ 6,42, o saldo é de R$ 6.420,00. Se a cota subir para R$ 6,50, o saldo passa a R$ 6.500,00.",
+    "onde_encontrar": "Extrato do fundo e site da gestora"
+  },
+  {
+    "conceito": "Classes de fundos",
+    "definicao": "A CVM classifica os fundos pelo que eles podem comprar. Fundos de renda fixa aplicam pelo menos 80% em renda fixa; fundos de ações aplicam pelo menos 67% em ações; fundos multimercado combinam vários mercados e estratégias; fundos cambiais aplicam pelo menos 80% em ativos ligados a moedas estrangeiras.",
+    "ponto_de_atencao": "A classe indica o tipo de risco e a forma de tributação do fundo, mas não garante rentabilidade.",
+    "exemplo": "Um fundo multimercado pode investir ao mesmo tempo em juros, ações e dólar.",
+    "onde_encontrar": "Lâmina do fundo e site da CVM"
+  },
+  {
+    "conceito": "Risco e volatilidade",
+    "definicao": "Volatilidade é o quanto o valor da cota sobe e desce ao longo do tempo. Quanto maior a volatilidade, maior a chance de o saldo ficar abaixo do valor aplicado em algum momento.",
+    "ponto_de_atencao": "Rentabilidade passada não garante rentabilidade futura. Fundos mais voláteis exigem prazo maior para que as oscilações tenham tempo de se compensar.",
+    "exemplo": "Um fundo de ações pode cair 5% em um mês e subir 7% no seguinte; um fundo DI costuma variar muito pouco.",
+    "onde_encontrar": "Lâmina do fundo, seção de riscos e histórico de rentabilidade"
+  },
+  {
+    "conceito": "FGC (Fundo Garantidor de Créditos)",
+    "definicao": "Garantia que devolve ao investidor até R$ 250 mil por CPF e por instituição financeira em investimentos como poupança, CDB, LCI e LCA, caso a instituição quebre. O limite total é de R$ 1 milhão a cada 4 anos.",
+    "ponto_de_atencao": "Fundos de investimento NÃO são cobertos pelo FGC. Essa é uma confusão comum entre investidores.",
+    "exemplo": "R$ 6.000 em um CDB de um banco têm garantia do FGC; os mesmos R$ 6.000 em um fundo DI não têm.",
+    "onde_encontrar": "Site do FGC (fgc.org.br)"
   }
 ]
