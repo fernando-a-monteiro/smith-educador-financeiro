@@ -34,13 +34,12 @@ O impacto é um investidor que entende o que paga e as regras do próprio dinhei
 
 ## Checklist do Pitch
 
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+- [x] Problema claramente definido
+- [x] Solução demonstrada na prática
+- [x] Diferencial explicado
 
 ---
 
-## Link do Vídeo
+## Formato
 
-Em produção.
+O pitch foi entregue como roteiro escrito. A demonstração descrita na seção 3 pode ser reproduzida seguindo as instruções de [`src/README.md`](../src/README.md).
