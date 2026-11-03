@@ -92,7 +92,7 @@ As instruções para instalar e executar o Smith estão em [`src/README.md`](./s
 ## 🗂️ Estrutura do Repositório
 
 ```
-📁 dio-lab-bia-do-futuro/
+📁 dsmith-educador-financeiro/
 ├── 📄 README.md
 ├── 📁 data/        # Base de conhecimento (dados fictícios)
 ├── 📁 docs/        # Documentação de cada etapa
